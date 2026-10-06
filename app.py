@@ -1,52 +1,58 @@
-import os
-import sys
+"""Simple calculator module with basic arithmetic operations."""
 
 
-def add(a,b):
-    """Add two numbers"""
-    return a+b
+def add(num1, num2):
+    """Add two numbers."""
+    return num1 + num2
 
-def subtract(a, b):
-    """Subtract two numbers"""
-    return a - b
 
-def multiply(a,b):
-    """Multiply two numbers"""
-    return a*b
+def subtract(num1, num2):
+    """Subtract two numbers."""
+    return num1 - num2
 
-def divide(a, b):
-    """Divide two numbers"""
-    if b==0:
+
+def multiply(num1, num2):
+    """Multiply two numbers."""
+    return num1 * num2
+
+
+def divide(num1, num2):
+    """Divide two numbers."""
+    if num2 == 0:
         raise ValueError("Cannot divide by zero")
-    return a/b
+    return num1 / num2
 
 
 def calculate(operation, num1, num2):
-    """Perform calculation based on operation"""
+    """Perform calculation based on operation."""
     if operation == 'add':
-        result = add(num1,num2)
+        result = add(num1, num2)
     elif operation == 'subtract':
         result = subtract(num1, num2)
     elif operation == 'multiply':
-        result = multiply(num1,num2)
+        result = multiply(num1, num2)
     elif operation == 'divide':
         result = divide(num1, num2)
     else:
         raise ValueError(f"Unknown operation: {operation}")
-    
+
     return result
 
 
-if __name__ == "__main__":
+def main():
+    """Run a short demo of the calculator."""
     print("Simple Calculator")
     print("-" * 20)
-    
+
     result1 = calculate('add', 10, 5)
     print(f"10 + 5 = {result1}")
-    
+
     result2 = calculate('multiply', 7, 3)
     print(f"7 * 3 = {result2}")
-    
-    unused_variable = "This variable is never used"
-    
+
     print("Calculator completed successfully!")
+
+
+if __name__ == "__main__":
+    main()
+    
